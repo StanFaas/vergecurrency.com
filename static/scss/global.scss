@@ -4,12 +4,15 @@
 // - RESPONSIVE
 $max-width-xs: 47.9375em; // as 48em is defined by flexboxgrid,
                           // this seems to scale along pretty well..
+$min-width-xs--iphone-plus: 414px;
 $min-width-xs: 30em;
 $min-width-sm: 48em;
 $min-width-md: 64em;
 $min-width-lg: 75em;
 
-// - COLORS
+$base-font-size: 16px;
+
+// - BRAND COLORS
 $black:               #000;
 $white:               #fff;
 $pacific-blue-1:      #0095c1;
@@ -32,9 +35,14 @@ $colors: (
   dark-blue: $dark-blue
 );
 
+@function rem($pixels, $size: $base-font-size) {
+  @return $pixels / ($size / (1rem * 1));
+}
+
 //Partials
 // @import 'partials/menu';
 @import 'partials/header';
+@import 'partials/subheader';
 @import 'partials/base';
 @import 'partials/button';
 @import 'partials/ribbon';
@@ -44,6 +52,8 @@ $colors: (
 
 //Pages
 @import 'pages/home';
+@import 'pages/about';
+@import 'pages/business';
 @import 'pages/presskit';
 @import 'pages/pressreleases';
 @import 'pages/pressrelease';
